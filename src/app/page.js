@@ -1,10 +1,8 @@
-import Header from "./components/Header";
+import ExtensionList from "./components/ExtensionList";
 export default function Home() {
   return (
     <>
-      <Header>
-
-      </Header>
+      <ExtensionList />
     </>
   );
 }
