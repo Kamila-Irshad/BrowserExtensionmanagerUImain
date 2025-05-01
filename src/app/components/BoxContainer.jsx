@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Container from "./Container";
 import Switch from "./Switch";
 const BoxContainer = () => {
     const ContainerData = [
@@ -88,7 +87,7 @@ const BoxContainer = () => {
         <>
             <div className="grid grid-cols-12   gap-4 " >
                 {ContainerData.map((data) => (
-                    <div className="lg:col-span-4 md:col-span-6 sm:col-span-12" key={data.id}>
+                    <div className="lg:col-span-4 md:col-span-6 col-span-12" key={data.id}>
                         <div key={data.id} className="dark:bg-[#323A49] dark:text-white bg-[#EDF5FB] text-black h-[200px] max-w-[600px] min-w-[200px] p-8  items-center rounded-2xl mt-2  ">
                             <div className="flex gap-3 ">
                                 <Image alt="Image" width={50} height={50} src={data.image}></Image>

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import logoImage from "../../../public/Images/logo.svg";
 import brightNessLogo from "../../../public/Images/logoBright.svg"
-
+import DarkModeToggle from "./DarkModeToggle";
 const Header = () => {
     return (
         <>
@@ -13,10 +13,11 @@ const Header = () => {
                             className=" w-[150px] text-white"
                         ></Image>
                     </div>
-                    <div className=" dark:bg-[#545969] bg-[#EDEDED] rounded-2xl py-3 px-4">
-                        <Image src={brightNessLogo} width={0} height={0} className=" " alt="BrightNessLogo"
+                    <div className=" dark:bg-[#545969] bg-[#EDEDED] rounded-2xl py-3 px-3 ">
+                        {/* <Image src={brightNessLogo} width={0} height={0} className=" " alt="BrightNessLogo"
 
-                        ></Image>
+                        ></Image> */}
+                        <DarkModeToggle />
                     </div>
                 </div>
 
