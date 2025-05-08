@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import logoImage from "../../../public/Images/logo.svg";
-import brightNessLogo from "../../../public/Images/logoBright.svg"
-import DarkModeToggle from "./DarkModeToggle";
+// import brightNessLogo from "../../../public/Images/logoBright.svg"
+// import DarkModeToggle from "./DarkModeToggle";
 const Header = () => {
     return (
         <>
@@ -17,7 +17,7 @@ const Header = () => {
                         {/* <Image src={brightNessLogo} width={0} height={0} className=" " alt="BrightNessLogo"
 
                         ></Image> */}
-                        <DarkModeToggle />
+                        {/* <DarkModeToggle /> */}
                     </div>
                 </div>
 

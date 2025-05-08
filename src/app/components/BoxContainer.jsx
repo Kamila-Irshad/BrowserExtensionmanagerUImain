@@ -1,7 +1,18 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
 import Switch from "./Switch";
 const BoxContainer = () => {
+    const [isActive, setIsActive] = useState({})
+    const handleClick = (id) => {
+        setIsActive((prev) => ({
+            ...prev,
+            [id]: !prev[id]
+        }));
+
+    }
+console.log("isActive", isActive)
+
     const ContainerData = [
         {
             id: 1,
@@ -83,12 +94,14 @@ const BoxContainer = () => {
             image: "/Images/logo-devlens.svg",
         },
     ];
+    
     return (
         <>
             <div className="grid grid-cols-12   gap-4 " >
                 {ContainerData.map((data) => (
+                    
                     <div className="lg:col-span-4 md:col-span-6 col-span-12" key={data.id}>
-                        <div key={data.id} className="dark:bg-[#323A49] dark:text-white bg-[#EDF5FB] text-black h-[200px] max-w-[600px] min-w-[200px] p-8  items-center rounded-2xl mt-2  ">
+                        <div className="dark:bg-[#323A49] dark:text-white bg-[#EDF5FB] text-black h-[200px] max-w-[600px] min-w-[200px] p-8  items-center rounded-2xl mt-2 ">
                             <div className="flex gap-3 ">
                                 <Image alt="Image" width={50} height={50} src={data.image}></Image>
                                 <div className="">
@@ -97,10 +110,13 @@ const BoxContainer = () => {
                                 </div>
                             </div>
                             <div className="flex flex-row justify-between items-center mt-4 bg">
+                                {isActive[data.id] ? "Active" : "InAtive"}
                                 <button className="border py-1 px-2 text-sm rounded-2xl  ">
                                     Remove
                                 </button>
-                                <Switch className="border  p-1 rounded-2xl">on/off</Switch>
+                                <Switch
+                                    onChange={() => handleClick(data.id)}
+                                    className="border  p-1 rounded-2xl">on/off</Switch>
                             </div>
                         </div>
                     </div>
