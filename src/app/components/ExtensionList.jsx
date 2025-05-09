@@ -1,9 +1,14 @@
+'use client'
 import React from "react";
+import { useState } from "react";
 import Container from "./Container";
 import Button from "./Button";
 import BoxContainer from "./BoxContainer";
 import Header from "./Header";
 const ExtensionList = () => {
+    const [showBox, setShowBox]=useState()
+   
+    
     return (
         <Container>
             <Header />
@@ -11,13 +16,13 @@ const ExtensionList = () => {
                 <div className="flex justify-between lg:flex-row md:flex-row flex-col text-center items-center space-y-3 ">
                     <h1 className=" dark:text-white text-3xl text-black font-bold">Extension List</h1>
                     <div className=" flex  flex-row gap-2 ">
-                        <Button>All</Button>
-                        <Button>Active</Button>
-                        <Button>UnActive</Button>
+                        <Button onClick={()=>setShowBox ('all')} >All</Button>
+                        <Button onClick={()=>setShowBox("Active")}>Active</Button>
+                        <Button onClick={()=>setShowBox('inActive')}>UnActive</Button>
                     </div>
                 </div>
                 <div>
-                    <BoxContainer></BoxContainer>
+                    <BoxContainer filtereBox={showBox}></BoxContainer>
 
 
                 </div>

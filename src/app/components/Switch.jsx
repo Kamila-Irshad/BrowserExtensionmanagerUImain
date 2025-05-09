@@ -2,13 +2,12 @@
 import { Switch } from '@headlessui/react'
 import { useState } from 'react'
 
-export default function Togglebutton() {
-    const [enabled, setEnabled] = useState(false)
+export default function Togglebutton({enabled,onChange}) {
 
     return (
         <Switch
             checked={enabled}
-            onChange={setEnabled}
+            onChange={onChange}
             className="group relative flex h-7 w-14 cursor-pointer rounded-full bg-white/10 p-1 ease-in-out focus:not-data-focus:outline-none data-checked:bg-white/10 data-focus:outline data-focus:outline-white "
         >
             <span

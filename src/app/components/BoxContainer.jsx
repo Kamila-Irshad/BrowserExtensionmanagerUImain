@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Switch from "./Switch";
-const BoxContainer = () => {
-    const [isActive, setIsActive] = useState({})
+const BoxContainer = ({filtereBox}) => {
+    const [isActive, setIsActive] = useState([])
     const handleClick = (id) => {
         setIsActive((prev) => ({
             ...prev,
@@ -94,14 +94,25 @@ console.log("isActive", isActive)
             image: "/Images/logo-devlens.svg",
         },
     ];
+    const [removeBox, setRemoveBox]= useState(ContainerData)
+    const handleClickRemove = (id)=>{
+        const updated = removeBox.filter((data)=>data.id !== id)
+        setRemoveBox(updated)
+    }
     
+
+    const filtereData= removeBox.filter(data =>{
+        if(filtereBox === 'all') return true;
+        if (filtereBox === 'active') return isActive[data.id];
+        if (filtereBox === 'inActive') return !isActive[data.id];
+    })
     return (
         <>
             <div className="grid grid-cols-12   gap-4 " >
-                {ContainerData.map((data) => (
+                {filtereData.map((data) => (
                     
                     <div className="lg:col-span-4 md:col-span-6 col-span-12" key={data.id}>
-                        <div className="dark:bg-[#323A49] dark:text-white bg-[#EDF5FB] text-black h-[200px] max-w-[600px] min-w-[200px] p-8  items-center rounded-2xl mt-2 ">
+                        <div key={data.id} className="dark:bg-[#323A49] dark:text-white bg-[#EDF5FB] text-black h-[200px] max-w-[600px] min-w-[200px] p-8  items-center rounded-2xl mt-2 ">
                             <div className="flex gap-3 ">
                                 <Image alt="Image" width={50} height={50} src={data.image}></Image>
                                 <div className="">
@@ -110,8 +121,9 @@ console.log("isActive", isActive)
                                 </div>
                             </div>
                             <div className="flex flex-row justify-between items-center mt-4 bg">
-                                {isActive[data.id] ? "Active" : "InAtive"}
-                                <button className="border py-1 px-2 text-sm rounded-2xl  ">
+                                <button
+                                onClick={() => handleClickRemove(data.id)}
+                                className="border py-1 px-2 text-sm rounded-2xl  ">
                                     Remove
                                 </button>
                                 <Switch
