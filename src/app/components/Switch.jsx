@@ -8,11 +8,13 @@ export default function Togglebutton({enabled,onChange}) {
         <Switch
             checked={enabled}
             onChange={onChange}
-            className="group relative flex h-7 w-14 cursor-pointer rounded-full bg-white/10 p-1 ease-in-out focus:not-data-focus:outline-none data-checked:bg-white/10 data-focus:outline data-focus:outline-white "
-        >
+            className={`group relative flex h-7 w-14 cursor-pointer rounded-full p-1 transition-colors duration-300 
+                ${enabled ? 'bg-green-600' : 'bg-green-900'}`}
+       
+    >
             <span
                 aria-hidden="true"
-                className="pointer-events-none inline-block size-5 translate-x-0 rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out group-data-checked:translate-x-7 "
+                className="data-active:border-purple-500 pointer-events-none inline-block size-5 translate-x-0 rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out group-data-checked:translate-x-7 "
             />
         </Switch>
     )

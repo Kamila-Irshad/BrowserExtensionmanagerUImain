@@ -1,24 +1,17 @@
-// `"use client"
-// import { useTheme } from 'react';
+// "use client";
+
+// import { useTheme } from "@/context/ThemeContext";
 
 // const DarkModeToggle = () => {
-//     const { isDark, toggleTheme } = useTheme();
+//   const { toggleTheme } = useTheme();
+//   return (
+//     <button onClick={toggleTheme} className=" border rounded">
+//       {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+//     </button>
 
 
 
-
-
-
-
-//     return (
-//         <button
-//             onClick={toggleTheme}
-
-//             className=" border rounded"
-//         >
-//             {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
-//         </button>
-//     );
+//   );
 // };
 
 // export default DarkModeToggle;

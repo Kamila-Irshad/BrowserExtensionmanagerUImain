@@ -6,7 +6,7 @@ import Button from "./Button";
 import BoxContainer from "./BoxContainer";
 import Header from "./Header";
 const ExtensionList = () => {
-    const [showBox, setShowBox]=useState()
+    const [showBox, setShowBox]=useState("all")
    
     
     return (
@@ -14,10 +14,10 @@ const ExtensionList = () => {
             <Header />
             <div className="">
                 <div className="flex justify-between lg:flex-row md:flex-row flex-col text-center items-center space-y-3 ">
-                    <h1 className=" dark:text-white text-3xl text-black font-bold">Extension List</h1>
+                    <h1 className="text-white text-3xl font-bold">Extension List</h1>
                     <div className=" flex  flex-row gap-2 ">
                         <Button onClick={()=>setShowBox ('all')} >All</Button>
-                        <Button onClick={()=>setShowBox("Active")}>Active</Button>
+                        <Button onClick={()=>setShowBox("active")}>Active</Button>
                         <Button onClick={()=>setShowBox('inActive')}>UnActive</Button>
                     </div>
                 </div>

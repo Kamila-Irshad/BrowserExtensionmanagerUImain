@@ -112,7 +112,7 @@ console.log("isActive", isActive)
                 {filtereData.map((data) => (
                     
                     <div className="lg:col-span-4 md:col-span-6 col-span-12" key={data.id}>
-                        <div key={data.id} className="dark:bg-[#323A49] dark:text-white bg-[#EDF5FB] text-black h-[200px] max-w-[600px] min-w-[200px] p-8  items-center rounded-2xl mt-2 ">
+                        <div key={data.id} className="bg-[#323A49] text-white  text-black h-[200px] max-w-[600px] min-w-[200px] p-8  items-center rounded-2xl mt-2 ">
                             <div className="flex gap-3 ">
                                 <Image alt="Image" width={50} height={50} src={data.image}></Image>
                                 <div className="">
